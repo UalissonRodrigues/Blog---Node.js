@@ -28,8 +28,8 @@
                                 <%= categoria.slug %>
                             </th>
                             <th>
-                                <button class="btn btn-warning"> Editar </button>
-
+                                <a  href="/admin/categoria/editar/<%= categoria.id %>" class="btn btn-warning"> Editar</a>
+ 
                                 <form method="POST" action="/categoria/delete" style="display: inline;"
                                     onsubmit="confirmarDelete(event,this)">
                                     <input type="hidden" name="id" value="<%= categoria.id %>">
