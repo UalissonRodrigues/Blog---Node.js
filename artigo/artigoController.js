@@ -6,6 +6,12 @@ const categoriaModel = require("../categoria/categoriaModel");
 const artigoModel = require("./artigosModel");
 const slugify = require("slugify");
 
+router.get("/admin/artigos", (req, res) => {
+    artigoModel.findAll().then(artigos => {
+        res.render("admin/Viewsartigo/indexArtigo", { artigos: artigos });
+    })
+})
+
 router.get("/admin/artigo/new", (req, res) => {
     categoriaModel.findAll().then(categoria => {
         res.render("admin/Viewsartigo/artigoViews", { categoria: categoria });
